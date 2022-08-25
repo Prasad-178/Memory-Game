@@ -22,8 +22,14 @@ function nextSequence() {
     var randomChosenColour = buttonColors[num];
     gamePattern.push(randomChosenColour);
 
-    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+    setTimeout(function () {
+        playAnimation(randomChosenColour);
+    }, 100);
     playSound(randomChosenColour);
+}
+
+function playAnimation(randomChosenColour:string) {
+    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
 }
 
 var userChosenColour: string ;
